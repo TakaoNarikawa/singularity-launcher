@@ -2,7 +2,7 @@
 
 ## 何のためのモノ？
 
-Singularity 環境に入る際、環境ファイルへのパスを毎回入力するのが面倒であったので
+Singularity 環境に入る際、環境ファイルへのパスを毎回入力するのが面倒であったので<br/>
 少しでも楽になればと思い作成しました
 
 ![](https://github.com/TakaoNarikawa/singularity-launcher/blob/main/screenshots/sing-launch.gif?raw=true)
