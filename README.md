@@ -2,10 +2,19 @@
 
 ## 何のためのモノ？
 
-Singularity 環境に入る際、環境ファイルへのパスを毎回入力するのが面倒であったので
+Singularity 環境に入る際、環境ファイルへのパスを毎回入力するのが面倒であったので<br/>
 少しでも楽になればと思い作成しました
 
+![](https://github.com/TakaoNarikawa/singularity-launcher/blob/main/screenshots/sing-launch.gif?raw=true)
+
 ## 使い方
+
+クローンします
+
+```
+$ git clone https://github.com/TakaoNarikawa/singularity-launcher.git
+$ cd singularity-launcher
+```
 
 モジュールを使用するため `venv` で環境を作ります
 
@@ -21,13 +30,13 @@ $ vim ~/.bashrc
 ```
 
 ```sh
-alias sing-launch='~/envs/cli/bin/python3 ~/Code/Others/singularity-launcher/cli.py --envdir ~/Code/Singularity/envs'
+alias sing-launch='${venv環境パス}/bin/python3 ${cli.py へのパス} --envdir ${Singularity env ディレクトリ}'
 ```
 
-内訳は次の通りです
+自分の場合は次のようになりました
 
 ```sh
-alias sing-launch='${venv環境パス}/bin/python3 ${cli.py へのパス} --envdir ${Singularity env ディレクトリ}'
+alias sing-launch='~/envs/cli/bin/python3 ~/Code/Others/singularity-launcher/cli.py --envdir ~/Code/Singularity/envs'
 ```
 
 `.bashrc` を読み込み直すのを忘れないでください
