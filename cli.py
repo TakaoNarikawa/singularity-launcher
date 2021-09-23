@@ -7,15 +7,16 @@ import sys
 def choice_envpath(envdir, message="Select Singlarity Environment File"):
     assert envdir is not None
 
-    envpaths = glob.glob(os.path.join(envdir, "*.sif"))
+    envfiles = [os.path.basename(path) for path in glob.glob(os.path.join(envdir, "*.sif"))]
     questions = [
         inquirer.List(
             "name",
             message=message,
-            choices=envpaths,
+            choices=envfiles,
         ),
     ]
-    envpath = inquirer.prompt(questions)['name']
+    envfile = inquirer.prompt(questions)['name']
+    envpath = os.path.join(envdir, envfile)
     return envpath
 
 def interactive_command(cmd, environ=os.environ):
